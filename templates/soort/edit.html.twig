@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Soort{% endblock %}
+
+{% block body %}
+    <h1>Edit Soort</h1>
+
+    {{ include('soort/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('soort_index') }}">back to list</a>
+
+    {{ include('soort/_delete_form.html.twig') }}
+{% endblock %}

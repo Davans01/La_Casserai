@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Betaal{% endblock %}
+
+{% block body %}
+    <h1>Edit Betaal</h1>
+
+    {{ include('betaal/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('betaal_index') }}">back to list</a>
+
+    {{ include('betaal/_delete_form.html.twig') }}
+{% endblock %}

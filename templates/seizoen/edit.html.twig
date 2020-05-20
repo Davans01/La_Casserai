@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Seizoen{% endblock %}
+
+{% block body %}
+    <h1>Edit Seizoen</h1>
+
+    {{ include('seizoen/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('seizoen_index') }}">back to list</a>
+
+    {{ include('seizoen/_delete_form.html.twig') }}
+{% endblock %}

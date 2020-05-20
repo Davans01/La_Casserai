@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Soort index{% endblock %}
+
+{% block body %}
+    <h1>Soort index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Omschrijving</th>
+                <th>Meerprijs</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for soort in soorts %}
+            <tr>
+                <td>{{ soort.id }}</td>
+                <td>{{ soort.omschrijving }}</td>
+                <td>{{ soort.meerprijs }}</td>
+                <td>
+                    <a href="{{ path('soort_show', {'id': soort.id}) }}">show</a>
+                    <a href="{{ path('soort_edit', {'id': soort.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('soort_new') }}">Create new</a>
+{% endblock %}
