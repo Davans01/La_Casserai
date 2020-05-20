@@ -48,6 +48,86 @@ class User implements UserInterface
      */
     private $reseverings;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $username_canonice;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $email_canonical;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $enabled;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $salt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $last_login;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $confirmation_token;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $password_request;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $tel_nr;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $mobile_nr;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $first_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $insertion_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $last_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adress;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $zip;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $country;
+
     public function __construct()
     {
         $this->betaals = new ArrayCollection();
@@ -195,5 +275,192 @@ class User implements UserInterface
     }
     public function __toString() {
     return $this->email;
+    }
+
+    public function getUsernameCanonice(): ?string
+    {
+        return $this->username_canonice;
+    }
+
+    public function setUsernameCanonice(?string $username_canonice): self
+    {
+        $this->username_canonice = $username_canonice;
+
+        return $this;
+    }
+
+    public function getEmailCanonical(): ?string
+    {
+        return $this->email_canonical;
+    }
+
+    public function setEmailCanonical(?string $email_canonical): self
+    {
+        $this->email_canonical = $email_canonical;
+
+        return $this;
+    }
+
+    public function getEnabled(): ?string
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(?string $enabled): self
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    public function setSalt(?string $salt): self
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    public function getLastLogin(): ?\DateTimeInterface
+    {
+        return $this->last_login;
+    }
+
+    public function setLastLogin(?\DateTimeInterface $last_login): self
+    {
+        $this->last_login = $last_login;
+
+        return $this;
+    }
+
+    public function getConfirmationToken(): ?string
+    {
+        return $this->confirmation_token;
+    }
+
+    public function setConfirmationToken(?string $confirmation_token): self
+    {
+        $this->confirmation_token = $confirmation_token;
+
+        return $this;
+    }
+
+    public function getPasswordRequest(): ?string
+    {
+        return $this->password_request;
+    }
+
+    public function setPasswordRequest(?string $password_request): self
+    {
+        $this->password_request = $password_request;
+
+        return $this;
+    }
+
+    public function getTelNr(): ?string
+    {
+        return $this->tel_nr;
+    }
+
+    public function setTelNr(?string $tel_nr): self
+    {
+        $this->tel_nr = $tel_nr;
+
+        return $this;
+    }
+
+    public function getMobileNr(): ?string
+    {
+        return $this->mobile_nr;
+    }
+
+    public function setMobileNr(?string $mobile_nr): self
+    {
+        $this->mobile_nr = $mobile_nr;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->first_name;
+    }
+
+    public function setFirstName(?string $first_name): self
+    {
+        $this->first_name = $first_name;
+
+        return $this;
+    }
+
+    public function getInsertionName(): ?string
+    {
+        return $this->insertion_name;
+    }
+
+    public function setInsertionName(?string $insertion_name): self
+    {
+        $this->insertion_name = $insertion_name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->last_name;
+    }
+
+    public function setLastName(?string $last_name): self
+    {
+        $this->last_name = $last_name;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(?string $adress): self
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getZip(): ?string
+    {
+        return $this->zip;
+    }
+
+    public function setZip(?string $zip): self
+    {
+        $this->zip = $zip;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
     }
 }
