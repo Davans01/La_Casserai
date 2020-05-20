@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Betaal index{% endblock %}
+
+{% block body %}
+    <h1>Betaal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Soort</th>
+                <th>Rekening</th>
+                <th>Betaaldate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for betaal in betaals %}
+            <tr>
+                <td>{{ betaal.id }}</td>
+                <td>{{ betaal.soort }}</td>
+                <td>{{ betaal.rekening }}</td>
+                <td>{{ betaal.betaaldate ? betaal.betaaldate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('betaal_show', {'id': betaal.id}) }}">show</a>
+                    <a href="{{ path('betaal_edit', {'id': betaal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('betaal_new') }}">Create new</a>
+{% endblock %}

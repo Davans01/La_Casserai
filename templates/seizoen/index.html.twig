@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seizoen index{% endblock %}
+
+{% block body %}
+    <h1>Seizoen index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Omschrijving</th>
+                <th>Beginddatum</th>
+                <th>Einddatum</th>
+                <th>Korting</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seizoen in seizoens %}
+            <tr>
+                <td>{{ seizoen.id }}</td>
+                <td>{{ seizoen.omschrijving }}</td>
+                <td>{{ seizoen.beginddatum ? seizoen.beginddatum|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ seizoen.einddatum ? seizoen.einddatum|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ seizoen.korting }}</td>
+                <td>
+                    <a href="{{ path('seizoen_show', {'id': seizoen.id}) }}">show</a>
+                    <a href="{{ path('seizoen_edit', {'id': seizoen.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('seizoen_new') }}">Create new</a>
+{% endblock %}
