@@ -34,10 +34,10 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/betaal, role: ROLE_USER }
-        - { path: ^/extras, roles: ROLE_USER }
-        - { path: ^/kamer, roles: ROLE_USER }
-        - { path: ^/seizoen, roles: ROLE_USER }
-        - { path: ^/soort, roles: ROLE_USER }
-        - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/user, roles: ROLE_USER }
+        - { path: ^/betaal, role: ROLE_admin }
+        - { path: ^/extras, roles: ROLE_admin }
+        - { path: ^/kamer, roles: ROLE_admin }
+        - { path: ^/seizoen, roles: ROLE_admin }
+        - { path: ^/soort, roles: ROLE_admin }
+        - { path: ^/profile, roles: ROLE_admin }
+        - { path: ^/user, roles: ROLE_admin }
